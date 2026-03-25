@@ -7,7 +7,8 @@ public class Car
 
     public Car(int doorQuantity, string color)
     {
-        
+        DoorQuantity = doorQuantity;
+        Color = color;
     }
 
 }
