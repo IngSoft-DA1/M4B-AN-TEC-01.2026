@@ -2,10 +2,10 @@ namespace ExerciseClasses;
 
 public class Person
 {
-    public String Name { get; set; }
+    public string Name { get; set; }
     public DateTime BirthdayDate { get; set; }
 
-    public Person(String name, DateTime birthdayDate)
+    public Person(string name, DateTime birthdayDate)
     {
         Name = name;
         BirthdayDate = birthdayDate;
@@ -15,7 +15,7 @@ public class Person
     {
         int age = DateTime.Now.Year - BirthdayDate.Year;
         
-        if (BirthdayDate.Date > DateTime.Now.Date)
+        if (BirthdayDate.AddYears(age) > DateTime.Now)
         {
             age--;
         }

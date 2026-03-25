@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mgonz\\RiderProjects\\ExerciseSolution1\\ExerciseClasses\\ExerciseClasses.csproj",
+      "projectUniqueName": "C:\\Users\\mgonz\\Documents\\M4B-AN-TEC-01.2026\\Ejercicio Clase 2 .NET\\ExerciseSolution1\\ExerciseClasses\\ExerciseClasses.csproj",
       "projectName": "ExerciseClasses",
-      "projectPath": "C:\\Users\\mgonz\\RiderProjects\\ExerciseSolution1\\ExerciseClasses\\ExerciseClasses.csproj",
+      "projectPath": "C:\\Users\\mgonz\\Documents\\M4B-AN-TEC-01.2026\\Ejercicio Clase 2 .NET\\ExerciseSolution1\\ExerciseClasses\\ExerciseClasses.csproj",
       "packagesPath": "C:\\Users\\mgonz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mgonz\\RiderProjects\\ExerciseSolution1\\ExerciseClasses\\obj\\",
+      "outputPath": "C:\\Users\\mgonz\\Documents\\M4B-AN-TEC-01.2026\\Ejercicio Clase 2 .NET\\ExerciseSolution1\\ExerciseClasses\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mgonz\\AppData\\Roaming\\NuGet\\NuGet.Config"
