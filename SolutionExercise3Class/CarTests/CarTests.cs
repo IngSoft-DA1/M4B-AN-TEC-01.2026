@@ -5,11 +5,16 @@ namespace TestProject;
 [TestClass]
 public class CarTests
 {
+    
+    //Happy cases
 
     [TestMethod]
     public void Should_CreateACar_When_TheConstructorIsCalled()
     {
-        Car myCar = new Car(4, "Blue");
+        int doorQuantity = 4;
+        string color = "Blue";
+        
+        Car myCar = new Car(doorQuantity, color);
     }
 
 }
