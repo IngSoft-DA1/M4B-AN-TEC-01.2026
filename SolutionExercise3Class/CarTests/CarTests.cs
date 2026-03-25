@@ -18,8 +18,18 @@ public class CarTests
         Assert.AreEqual(doorQuantity, myCar.DoorQuantity);
         Assert.AreEqual(color, myCar.Color);
     }
+    
+    //wrong cases 
 
-    
-    
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentException))]
+    public void Should_ThrowException_When_TheDoorsQuantityIsExceededTheMaximum()
+    {
+        Car myCar = new Car(6,"Blue");
+        
+    }
+
+
+
 
 }
