@@ -1,0 +1,24 @@
+@page "/"
+@page "/AddMovie"
+
+@using Domain
+
+
+
+<h3>Add Movie</h3>
+
+<EditForm Model="@movie" OnSubmit="OnSave">
+    <input type="text" @bind-value="@movie.Name" id="name">
+</EditForm>
+
+
+@code {
+    public Movie movie = new Movie();
+    
+
+    public void OnSave()
+    {
+        
+    }
+
+}

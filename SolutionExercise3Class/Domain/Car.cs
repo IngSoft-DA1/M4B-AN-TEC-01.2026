@@ -7,16 +7,19 @@ public class Car
 
     public Car(int doorQuantity, string color)
     {
+        ValidateDoorsQuantity(doorQuantity);
+        //ValidateColor
+        //ValidateCarModel
+        DoorQuantity = doorQuantity;
+        Color = color;
+    }
+
+    private static void ValidateDoorsQuantity(int doorQuantity)
+    {
         int maximumDoorsQuantity = 4;
         if (doorQuantity > maximumDoorsQuantity)
         {
             throw new ArgumentException("Doors exceeded");
         }
-
-        DoorQuantity = doorQuantity;
-        Color = color;
-
-
     }
-
 }
