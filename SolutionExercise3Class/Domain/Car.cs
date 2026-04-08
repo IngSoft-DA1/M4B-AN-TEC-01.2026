@@ -7,7 +7,8 @@ public class Car
 
     public Car(int doorQuantity, string color)
     {
-        if (doorQuantity > 4)
+        int maximumDoorsQuantity = 4;
+        if (doorQuantity > maximumDoorsQuantity)
         {
             throw new ArgumentException("Doors exceeded");
         }
