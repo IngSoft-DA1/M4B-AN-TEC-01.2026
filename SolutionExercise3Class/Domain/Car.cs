@@ -7,8 +7,15 @@ public class Car
 
     public Car(int doorQuantity, string color)
     {
+        if (doorQuantity > 4)
+        {
+            throw new ArgumentException("Doors exceeded");
+        }
+
         DoorQuantity = doorQuantity;
         Color = color;
+
+
     }
 
 }
