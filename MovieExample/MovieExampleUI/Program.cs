@@ -1,10 +1,17 @@
+using DataAccess;
+using DataAccess.Repositories;
 using MovieExampleUI.Components;
+using Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddSingleton<InMemoryDatabase>();
+builder.Services.AddSingleton<MovieRepository>();
+builder.Services.AddSingleton<MovieService>();
 
 var app = builder.Build();
 
