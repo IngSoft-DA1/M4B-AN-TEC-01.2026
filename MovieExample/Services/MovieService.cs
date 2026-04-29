@@ -18,4 +18,21 @@ public class MovieService
         //Crear Movie usando el constructor
         _movieRepository.AddMovie(movie);
     }
+
+    public List<Movie> ListAllMovies()
+    {
+        // Valido que no haya peliculas Shreck
+        return _movieRepository.ListAllMovies();
+    }
+
+    public Movie? GetMovieByName(string name)
+    {
+        return _movieRepository.GetMovieByName(name);
+    }
+
+    public void UpdateMovie(Movie movie)
+    {
+        _movieRepository.UpdateMovie(movie);
+    }
+
 }

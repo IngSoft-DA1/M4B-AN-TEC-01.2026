@@ -11,6 +11,7 @@
 
 <EditForm Model="@movie" OnSubmit="OnSave">
     <input type="text" @bind-value="@movie.Name" id="name">
+    <button type="submit"> Save </button>
 </EditForm>
 
 
@@ -20,7 +21,7 @@
 
     public void OnSave()
     {
-        
+        MovieServiceInjected.AddMovie(movie);
     }
 
 }

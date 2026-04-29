@@ -1,0 +1,38 @@
+@page "/EditMovie/{Name}"
+@using Domain
+@using Services
+
+@inject MovieService MovieServiceInjected
+
+<h3>Edit Movie</h3>
+
+@if (Movie != null)
+{
+    <EditForm Model="@Movie" OnValidSubmit="OnSubmit">
+        <label for="name">Name</label>
+        <input type="text" @bind-value="Movie.Name" placeholder="Name" id="name">
+        <button type="submit">Save</button>
+    </EditForm>
+}
+else
+{
+    <h3>Movie Not Found</h3>
+}
+
+@code {
+
+    public Movie? Movie { get; set; }
+    
+    [Parameter] public string Name { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Movie = MovieServiceInjected.GetMovieByName(Name);
+    }
+
+    public void OnSubmit()
+    {
+        MovieServiceInjected.UpdateMovie(Movie);
+    }
+
+}
