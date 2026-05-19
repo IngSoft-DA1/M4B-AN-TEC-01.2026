@@ -4,19 +4,25 @@
 
 @inject MovieService MovieServiceInjected
 
-<h3>Edit Movie</h3>
+<h3 class="mb-4">Edit Movie</h3>
 
 @if (Movie != null)
 {
     <EditForm Model="@Movie" OnValidSubmit="OnSubmit">
-        <label for="name">Name</label>
-        <input type="text" @bind-value="Movie.Name" placeholder="Name" id="name">
-        <button type="submit">Save</button>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" @bind-value="Movie.Name" placeholder="Name" id="name">
+        </div>
+        <div class="mb-3">
+            <label for="releaseDate" class="form-label">Release Date</label>
+            <input type="date" class="form-control" @bind-value="Movie.ReleaseDate" id="releaseDate">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
     </EditForm>
 }
 else
 {
-    <h3>Movie Not Found</h3>
+    <div class="alert alert-warning">Movie Not Found</div>
 }
 
 @code {

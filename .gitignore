@@ -97,3 +97,5 @@ obj/
 # NuGet
 *.nupkg
 packages/
+
+.claude
