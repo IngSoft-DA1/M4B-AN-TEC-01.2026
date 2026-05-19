@@ -1,5 +1,7 @@
 using DataAccess.Repositories;
 using Domain;
+using Services.DTOs;
+using Services.Mappers;
 
 namespace Services;
 
@@ -11,28 +13,26 @@ public class MovieService
         _movieRepository = movieRepository;
     }
 
-    //Aca la clase que viene lo cambiamos por MovieDTO
-    public void AddMovie(Movie movie)
+    public void AddMovie(AddMovieDto dto)
     {
-        //Verificar si la peli ya estaba en la db
-        //Crear Movie usando el constructor
-        _movieRepository.AddMovie(movie);
+        _movieRepository.AddMovie(MovieMapper.ToMovie(dto));
     }
 
-    public List<Movie> ListAllMovies()
+    public List<MovieDto> ListAllMovies()
     {
-        // Valido que no haya peliculas Shreck
-        return _movieRepository.ListAllMovies();
+        return _movieRepository.ListAllMovies().Select(MovieMapper.ToMovieDto).ToList();
     }
 
-    public Movie? GetMovieByName(string name)
+    public EditMovieDto? GetMovieByName(string name)
     {
-        return _movieRepository.GetMovieByName(name);
+        Movie? movie = _movieRepository.GetMovieByName(name);
+        if (movie == null) return null;
+        return MovieMapper.ToEditMovieDto(movie);
     }
 
-    public void UpdateMovie(Movie movie)
+    public void UpdateMovie(EditMovieDto dto)
     {
-        _movieRepository.UpdateMovie(movie);
+        _movieRepository.UpdateMovie(dto.OriginalName, MovieMapper.ToMovie(dto));
     }
 
 }

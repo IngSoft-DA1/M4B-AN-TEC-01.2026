@@ -1,34 +1,33 @@
 @page "/"
 @page "/AddMovie"
 
-@using Domain
 @using Services
+@using Services.DTOs
 
 @inject MovieService MovieServiceInjected
 
 
 <h3 class="mb-4">Add Movie</h3>
 
-<EditForm Model="@movie" OnSubmit="OnSave">
+<EditForm Model="@dto" OnSubmit="OnSave">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" @bind-value="@movie.Name" id="name">
+        <input type="text" class="form-control" @bind-value="@dto.Name" id="name">
     </div>
     <div class="mb-3">
         <label for="releaseDate" class="form-label">Release Date</label>
-        <input type="date" class="form-control" @bind-value="@movie.ReleaseDate" id="releaseDate">
+        <input type="date" class="form-control" @bind-value="@dto.ReleaseDate" id="releaseDate">
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
 </EditForm>
 
 
 @code {
-    public Movie movie = new Movie();
-    
+    public AddMovieDto dto = new AddMovieDto();
 
     public void OnSave()
     {
-        MovieServiceInjected.AddMovie(movie);
+        MovieServiceInjected.AddMovie(dto);
     }
 
 }

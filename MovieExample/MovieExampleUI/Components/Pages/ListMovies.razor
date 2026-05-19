@@ -1,6 +1,6 @@
 @page "/ListMovies"
-@using Domain
 @using Services
+@using Services.DTOs
 
 @inject MovieService MovieServiceInjected
 @inject NavigationManager NavigationManagerInjected
@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (Movie movie in Movies)
+    @foreach (MovieDto movie in Movies)
     {
         <tr>
             <td>@movie.Name</td>
@@ -32,7 +32,7 @@
 </table>
 
 @code {
-    public List<Movie> Movies { get; set; }
+    public List<MovieDto> Movies { get; set; }
 
     protected override void OnInitialized()
     {

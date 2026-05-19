@@ -28,9 +28,9 @@ public class MovieRepository
         return _inMemoryDb.Movies.FirstOrDefault(m => m.Name == name);
     }
 
-    public void UpdateMovie(Movie movie)
+    public void UpdateMovie(string originalName, Movie movie)
     {
-        int indexOfMovieToUpdate = _inMemoryDb.Movies.FindIndex(m => m.Name == movie.Name);
+        int indexOfMovieToUpdate = _inMemoryDb.Movies.FindIndex(m => m.Name == originalName);
         _inMemoryDb.Movies.RemoveAt(indexOfMovieToUpdate);
         _inMemoryDb.Movies.Insert(indexOfMovieToUpdate, movie);
     }
