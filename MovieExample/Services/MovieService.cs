@@ -7,8 +7,8 @@ namespace Services;
 
 public class MovieService
 {
-    private readonly MovieRepository _movieRepository;
-    public MovieService(MovieRepository movieRepository)
+    private readonly MovieRepositorySql _movieRepository;
+    public MovieService(MovieRepositorySql movieRepository)
     {
         _movieRepository = movieRepository;
     }
@@ -32,7 +32,7 @@ public class MovieService
 
     public void UpdateMovie(EditMovieDto dto)
     {
-        _movieRepository.UpdateMovie(dto.OriginalName, MovieMapper.ToMovie(dto));
+        _movieRepository.UpdateMovie(MovieMapper.ToMovie(dto));
     }
 
 }
